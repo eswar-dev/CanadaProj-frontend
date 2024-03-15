@@ -19,7 +19,7 @@ const TypingAnimation = ({ text, animatedWord }) => {
   }, [text]);
 
   return (
-    <Typography fontSize={'50px'} display={'inline-block'}>
+    <Typography fontSize={'50px'} display={'inline-block'} color={'#1561ad'}>
       {displayText.replace(animatedWord, `${animatedWord} `)}
     </Typography>
   );

@@ -20,12 +20,12 @@ const MiddleSection = () => {
       const windowHeight = window.innerHeight;
       const documentHeight = document.documentElement.scrollHeight;
       const scrollTop = document.documentElement.scrollTop;
-
+      console.log(windowHeight, documentHeight, scrollTop);
       // Check if the user has scrolled to the bottom of the page
-      if (windowHeight + scrollTop === documentHeight) {
-        // Set the numbers you want to animate when scrolled to the bottom
-        setNumbers({ number1: 100, number2: 150, number3: 30 }); // You can set any numbers here
-      }
+      // if (windowHeight + scrollTop === documentHeight) {
+      // Set the numbers you want to animate when scrolled to the bottom
+      setNumbers({ number1: 100, number2: 150, number3: 30 }); // You can set any numbers here
+      // }
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -45,7 +45,7 @@ const MiddleSection = () => {
       >
         <Navbar />
       </Grid>
-      <Grid item>
+      <Grid item mt={'80px'}>
         <img
           src={Mainimg}
           style={{
