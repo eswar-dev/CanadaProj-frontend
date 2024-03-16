@@ -8,6 +8,7 @@ import Content from './Content';
 import FooterCard from './FooterCard';
 import NumberAnimation from './NumberAnimation';
 import TypingAnimation from './TextAnimation';
+import servicebg from '../servicebg.jpg';
 const MiddleSection = () => {
   const [numbers, setNumbers] = useState({
     number1: 0,
@@ -87,7 +88,7 @@ const MiddleSection = () => {
       <Grid item width={'100%'} p={3} gap={'15px'} mb={5}>
         <Grid item display={'flex'} gap={'15px'}>
           <Grid item md={6} display={'flex'} justifyContent={'center'}>
-            <img src={BussinessLogo} style={{ height: '300px' }} />
+            <img src={servicebg} style={{ height: '300px', width: '300px' }} />
           </Grid>
           <Grid item md={6}>
             <Content />
