@@ -4,6 +4,8 @@ import React, { useState } from 'react';
 import { AppBar, Toolbar, Typography, Button, Grid } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import MainLogo from './../mainLogo.jpeg';
+import finallogo1 from './../finallogo1.jpg';
+import secondlogo from './../secondlogo.jpg';
 import PhoneInTalkIcon from '@mui/icons-material/PhoneInTalk';
 import { Menu, MenuItem } from '@mui/material';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
@@ -39,8 +41,8 @@ const Navbar = () => {
           justifyContent={'space-between'}
           alignItems={'center'}
         >
-          <Grid sx={{ pt: '5px' }} item>
-            <img src={MainLogo} style={{ width: '180px', height: '80px' }} />
+          <Grid sx={{ pt: '10px' }} item>
+            <img src={finallogo1} style={{ width: '215px', height: '30px' }} />
           </Grid>
           <Grid item display={'flex'} gap={'30px'}>
             <Typography

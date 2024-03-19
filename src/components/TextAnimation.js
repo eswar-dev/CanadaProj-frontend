@@ -13,7 +13,7 @@ const TypingAnimation = ({ text, animatedWord }) => {
       } else {
         clearInterval(typingTimer);
       }
-    }, 80); // Adjust typing speed here (milliseconds per character)
+    }, 5); // Adjust typing speed here (milliseconds per character)
 
     return () => clearInterval(typingTimer);
   }, [text]);

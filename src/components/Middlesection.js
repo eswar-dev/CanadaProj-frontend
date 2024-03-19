@@ -8,13 +8,22 @@ import Content from './Content';
 import FooterCard from './FooterCard';
 import NumberAnimation from './NumberAnimation';
 import TypingAnimation from './TextAnimation';
-import servicebg from '../servicebg.jpg';
+import teamwork from '../teamwork.jpg';
+import courses from '../courses.jpg';
+import about from '../about.jpg';
+import mainpic from '../mainpic.jpg';
+import background from '../background.jpg';
+import SliderComponent from './SliderComponent';
+import slide1 from '../slide1.jpg';
+import slide2 from '../slide2.jpg';
+
 const MiddleSection = () => {
   const [numbers, setNumbers] = useState({
     number1: 0,
     number2: 0,
     number3: 0,
   });
+  const images = [slide1, slide2];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,17 +55,8 @@ const MiddleSection = () => {
       >
         <Navbar />
       </Grid>
-      <Grid item mt={'80px'}>
-        <img
-          src={Mainimg}
-          style={{
-            height: '600px',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center', // Align image to center vertically
-          }}
-          alt=''
-        />
+      <Grid item width={'100%'}>
+        <SliderComponent images={images} />
       </Grid>
       <Grid
         item
@@ -85,26 +85,26 @@ const MiddleSection = () => {
           }}
         ></Box>
       </Grid>
-      <Grid item width={'100%'} p={3} gap={'15px'} mb={5}>
-        <Grid item display={'flex'} gap={'15px'}>
+      <Grid item width={'100%'} p={3} mb={5}>
+        <Grid item display={'flex'} gap={'15px'} mt={2}>
           <Grid item md={6} display={'flex'} justifyContent={'center'}>
-            <img src={servicebg} style={{ height: '300px', width: '300px' }} />
+            <img src={teamwork} style={{ height: '300px', width: '100%' }} />
           </Grid>
           <Grid item md={6}>
             <Content />
           </Grid>
         </Grid>
-        <Grid item display={'flex'}>
+        <Grid item display={'flex'} gap={'15px'} mt={2}>
           <Grid item md={6}>
             <Content />
           </Grid>
           <Grid item md={6} display={'flex'} justifyContent={'center'}>
-            <img src={BussinessLogo} style={{ height: '300px' }} />
+            <img src={courses} style={{ height: '300px', width: '100%' }} />
           </Grid>
         </Grid>
-        <Grid item display={'flex'}>
+        <Grid item display={'flex'} gap={'15px'} mt={2}>
           <Grid item md={6} display={'flex'} justifyContent={'center'}>
-            <img src={BussinessLogo} style={{ height: '300px' }} />
+            <img src={about} style={{ height: '300px', width: '100%' }} />
           </Grid>
           <Grid item md={6}>
             <Content />
@@ -124,7 +124,7 @@ const MiddleSection = () => {
         }}
       >
         <Grid item display={'flex'} justifyContent='center'>
-          <Typography fontSize={'40px'} fontWeight={800} color={'red'}>
+          <Typography fontSize={'35px'} fontWeight={800} color={'#01AAC1'}>
             Growing Exponentially
           </Typography>
         </Grid>

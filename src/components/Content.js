@@ -7,7 +7,6 @@ export default function Content() {
       sx={{
         boxShadow: 'rgba(149, 157, 165, 0.2) 0px 8px 24px',
         transition: 'box-shadow 0.3s',
-        margin: '10px',
         borderRadius: '20px',
         ':hover': {
           boxShadow: 'rgba(195, 107, 117, 0.6) 0px 8px 24px',

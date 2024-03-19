@@ -16,7 +16,7 @@ const NumberAnimation = ({ number }) => {
             return prevCount;
           }
         });
-      }, 40); // Adjust the interval as needed for smoother/faster animation
+      }, 5); // Adjust the interval as needed for smoother/faster animation
     }
 
     return () => clearInterval(interval);
