@@ -12,6 +12,7 @@ import Servicebg from '../../servicelogo.jpg';
 import { servicedata, serviceObjects } from '../constant';
 import { useNavigate } from 'react-router-dom';
 import Footer from '../Footer';
+import { purple } from '@mui/material/colors';
 export default function Service({
   serviceName = 'Services',
   servicePath = '/services',
@@ -62,11 +63,18 @@ export default function Service({
                   style={{
                     color: 'orange',
                     fontSize: '18px',
-                    fontWeight: 500,
                     cursor: 'pointer',
                   }}
                 >
-                  {item.label}
+                  <Button
+                    style={{
+                      color: '#fff',
+                      backgroundColor: purple[500],
+                      fontWeight: 600,
+                    }}
+                  >
+                    {item.label}
+                  </Button>
                 </Grid>
               ))}
             </Grid>

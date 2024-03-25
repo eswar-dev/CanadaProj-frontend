@@ -28,6 +28,7 @@ const SliderComponent = ({ images }) => {
   const SliderContainer = styled.div`
     position: relative;
     width: 100%;
+
     max-width: 700px; /* Adjust the maximum width as needed */
     margin: auto;
   `;
@@ -63,7 +64,7 @@ const SliderComponent = ({ images }) => {
   const NextButton = styled.button`
     position: absolute;
     top: 50%;
-    right: -215px; /* Adjust right position */
+    right: 145px; /* Adjust right position */
     transform: translateY(-50%);
     cursor: pointer;
     background: rgba(255, 255, 255, 0.5);
@@ -74,14 +75,18 @@ const SliderComponent = ({ images }) => {
 
   return (
     <SliderContainer>
-      <PrevButton onClick={prevSlide}>&#10094;</PrevButton>
-      <NextButton onClick={nextSlide}>&#10095;</NextButton>
+      {/* <PrevButton onClick={prevSlide}>&#10094;</PrevButton>
+      <NextButton onClick={nextSlide}>&#10095;</NextButton> */}
       <SliderContent>
         {images.map((image, index) => (
           <Slide
             key={index}
             className={index === currentSlide ? 'active' : ''}
-            style={{ backgroundImage: `url(${image})` }}
+            style={{
+              backgroundImage: `url(${image})`,
+              maxHeight: '400px',
+              maxWidth: '450px',
+            }}
           />
         ))}
       </SliderContent>

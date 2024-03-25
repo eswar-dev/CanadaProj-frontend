@@ -16,7 +16,8 @@ import background from '../background.jpg';
 import SliderComponent from './SliderComponent';
 import slide1 from '../slide1.jpg';
 import slide2 from '../slide2.jpg';
-
+import BgContent from './BgContent';
+import mainbg from '../mainbg.png';
 const MiddleSection = () => {
   const [numbers, setNumbers] = useState({
     number1: 0,
@@ -55,8 +56,36 @@ const MiddleSection = () => {
       >
         <Navbar />
       </Grid>
-      <Grid item width={'100%'}>
-        <SliderComponent images={images} />
+      <Grid
+        container
+        display={'flex'}
+        justifyContent={'center'}
+        alignItems={'center'}
+        item
+        width={'100%'}
+        mt={6}
+        pl={2}
+        style={{
+          // backgroundImage: 'url("../mainbg.png")',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundImage: `url(${mainbg})`,
+        }}
+      >
+        <Grid item md={7}>
+          <Grid item display={'flex'} gap={'10px'}>
+            <BgContent />
+            <BgContent />
+          </Grid>
+          <Grid item display={'flex'} gap={'10px'}>
+            {' '}
+            <BgContent />
+            <BgContent />
+          </Grid>
+        </Grid>
+        <Grid item md={5}>
+          <SliderComponent images={images} />
+        </Grid>
       </Grid>
       <Grid
         item

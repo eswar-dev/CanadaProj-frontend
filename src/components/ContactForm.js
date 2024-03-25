@@ -1,57 +1,49 @@
 import React, { useState } from 'react';
-import { TextField, Button, Grid, Container } from '@mui/material';
+import { Container, TextField, Button, Grid } from '@mui/material';
+import axios from 'axios';
 import Navbar from './Navbar';
-const ContactForm = () => {
+function ContactForm() {
   const [formData, setFormData] = useState({
     username: '',
     email: '',
     message: '',
-    senderEmail: '', // Add senderEmail field
-    receiverEmail: '', // Add receiverEmail field
   });
+  const [submitting, setSubmitting] = useState(false);
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:3001/send-email', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-      console.log(response);
-      if (response.ok) {
-        console.log('Email sent successfully');
-        // Reset form after successful submission
-        setFormData({
-          username: '',
-          email: '',
-          message: '',
-          senderEmail: '', // Reset senderEmail field
-          receiverEmail: '', // Reset receiverEmail field
-        });
-      } else {
-        console.error('Failed to send email');
-      }
+      setSubmitting(true);
+      await sendEmail(formData);
+      alert('Email sent successfully');
+      setFormData({ username: '', email: '', message: '' });
     } catch (error) {
       console.error('Error sending email:', error);
+      alert('Failed to send email');
+    } finally {
+      setSubmitting(false);
     }
   };
 
+  const sendEmail = async (formData) => {
+    await axios.post('http://localhost:3001/send-email', {
+      to: formData.email,
+      subject: `Message from ${formData.username}`,
+      text: formData.message,
+    });
+  };
+
   return (
-    <Grid>
-      <Grid
-        item
-        style={{ position: 'fixed', top: 0, width: '100%', zIndex: 1000 }}
-      >
+    <Grid container display={'flex'} justifyContent={'center'}>
+      <Grid container width={'100%'}>
         <Navbar />
       </Grid>
-      <Container>
+      <Grid item>
         <form onSubmit={handleSubmit}>
           <TextField
             fullWidth
@@ -80,36 +72,20 @@ const ContactForm = () => {
             onChange={handleChange}
             margin='normal'
           />
-          <TextField
-            fullWidth
-            label='Sender Email'
-            name='senderEmail'
-            type='email'
-            value={formData.senderEmail}
-            onChange={handleChange}
-            margin='normal'
-          />
-          <TextField
-            fullWidth
-            label='Receiver Email'
-            name='receiverEmail'
-            type='email'
-            value={formData.receiverEmail}
-            onChange={handleChange}
-            margin='normal'
-          />
+
           <Button
             type='submit'
             variant='contained'
             color='primary'
+            disabled={submitting}
             sx={{ marginTop: '1rem' }}
           >
-            Send
+            {submitting ? 'Sending...' : 'Send'}
           </Button>
         </form>
-      </Container>
+      </Grid>
     </Grid>
   );
-};
+}
 
 export default ContactForm;
