@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Container, TextField, Button, Grid } from '@mui/material';
 import axios from 'axios';
 import Navbar from './Navbar';
+import teamwork from '../teamwork.jpg';
+
 function ContactForm() {
   const [formData, setFormData] = useState({
     username: '',
@@ -39,11 +41,17 @@ function ContactForm() {
   };
 
   return (
-    <Grid container display={'flex'} justifyContent={'center'}>
+    <Grid container display={'flex'} >
       <Grid container width={'100%'}>
         <Navbar />
       </Grid>
-      <Grid item>
+      <Grid item container display={'flex'} justifyContent={'center'} gap={'20px'}>
+      <Grid item >
+      <img src={teamwork} style={{ height: '400px', width: '100%' }} />
+
+      </Grid>
+      <Grid item >
+
         <form onSubmit={handleSubmit}>
           <TextField
             fullWidth
@@ -84,6 +92,8 @@ function ContactForm() {
           </Button>
         </form>
       </Grid>
+      </Grid>
+    
     </Grid>
   );
 }

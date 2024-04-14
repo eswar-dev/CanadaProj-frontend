@@ -18,6 +18,29 @@ import slide1 from '../slide1.jpg';
 import slide2 from '../slide2.jpg';
 import BgContent from './BgContent';
 import mainbg from '../mainbg.png';
+
+
+function TypewriterText({ text }) {
+  const [displayedText, setDisplayedText] = useState('');
+
+  useEffect(() => {
+    let currentIndex = 0;
+    const intervalId = setInterval(() => {
+      if (currentIndex <= text.length) {
+        setDisplayedText(text.substring(0, currentIndex));
+        currentIndex++;
+      } else {
+        clearInterval(intervalId);
+      }
+    }, 100); // Typing speed: 100 milliseconds
+
+    return () => clearInterval(intervalId); // Cleanup on unmount
+  }, [text]);
+
+  return (
+    <span>{displayedText}</span>
+  );
+}
 const MiddleSection = () => {
   const [numbers, setNumbers] = useState({
     number1: 0,
@@ -25,13 +48,22 @@ const MiddleSection = () => {
     number3: 0,
   });
   const images = [slide1, slide2];
+  const [serviceIndex, setServiceIndex] = useState(0);
+  const services = ['consultancy', 'technical', 'training'];
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setServiceIndex(prevIndex => (prevIndex + 1) % services.length);
+    }, 2000); // Change service every 2 seconds
+
+    return () => clearInterval(intervalId); // Cleanup on unmount
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
       const windowHeight = window.innerHeight;
       const documentHeight = document.documentElement.scrollHeight;
       const scrollTop = document.documentElement.scrollTop;
-      console.log(windowHeight, documentHeight, scrollTop);
       // Check if the user has scrolled to the bottom of the page
       // if (windowHeight + scrollTop === documentHeight) {
       // Set the numbers you want to animate when scrolled to the bottom
@@ -72,20 +104,21 @@ const MiddleSection = () => {
           backgroundImage: `url(${mainbg})`,
         }}
       >
+          <Grid item md={5}>
+          <SliderComponent images={images} />
+        </Grid>
         <Grid item md={7}>
           <Grid item display={'flex'} gap={'10px'}>
-            <BgContent />
-            <BgContent />
+            <BgContent children={'box1'}/>
+            <BgContent children={'box2'}/>
           </Grid>
           <Grid item display={'flex'} gap={'10px'}>
             {' '}
-            <BgContent />
-            <BgContent />
+            <BgContent children={'box3'}/>
+            <BgContent children={'box4'}/>
           </Grid>
         </Grid>
-        <Grid item md={5}>
-          <SliderComponent images={images} />
-        </Grid>
+      
       </Grid>
       <Grid
         item
@@ -98,12 +131,13 @@ const MiddleSection = () => {
           item
           sx={{ minWidth: '200px', height: '5px', background: 'grey' }}
         ></Box>
-        <Grid item>
-          <Typography alignItems={'center'} fontSize={'50px'}>
-            𝔟𝔯𝔦𝔤𝔥𝔱 𝔰𝔭𝔞𝔠𝔢 𝔱𝔢𝔠𝔥{' '}
-            <TypingAnimation text='𝔰𝔬𝔩𝔲𝔱𝔦𝔬𝔫𝔰' animatedWord='𝔰𝔬𝔩𝔲𝔱𝔦𝔬𝔫𝔰' />
-          </Typography>
-        </Grid>
+      <Grid item display={'flex'} justifyContent='center'>
+      <Typography
+        style={{ fontSize: '24px', fontWeight: 800, color: '#01AAC1', margin: '10px' }}
+      >
+        Bright Space <TypewriterText text={services[serviceIndex]} /> Services
+      </Typography>
+    </Grid>
         <Box
           item
           sx={{

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
 const NumberAnimation = ({ number }) => {
-  console.log(number);
   const [count, setCount] = useState(0);
 
   useEffect(() => {

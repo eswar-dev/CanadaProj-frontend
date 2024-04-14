@@ -98,98 +98,38 @@ export default function Service({
         {serviceName === 'Application Management Services' && (
           <>
             <Typography>
-              AMS from Think & Move is a modular approach focused on securing
-              and increasing business and IT value for customers. We deliver
-              customized services to optimize your applications for your
-              specific business needs. Whether it’s regular hotfixes, upgrades,
-              quality assurance, transition management, user adoption, or
-              maintaining the underlying cloud or on-premise infrastructure of
-              your solution. Our mature operational setup, good experience in
-              focus industries, service management processes and governance
-              models tailored to your business, and dedicated service desk help
-              you keep pace with your digital transformation. Get in touch with
-              us for a FREE Consultation!
+            Application Management Services content
             </Typography>
           </>
         )}
 
         {serviceName === 'Data Governance Framework' && (
           <Typography>
-            AMS from Think & Move is a modular approach focused on securing and
-            increasing business and IT value for customers. We deliver
-            customized services to optimize your applications for your specific
-            business needs. Whether it’s regular hotfixes, upgrades, quality
-            assurance, transition management, user adoption, or maintaining the
-            underlying cloud or on-premise infrastructure of your solution. Our
-            mature operational setup, good experience in focus industries,
-            service management processes and governance models tailored to your
-            business, and dedicated service desk help you keep pace with your
-            digital transformation. Get in touch with us for a FREE
-            Consultation!
+           Data Governance Framework content
           </Typography>
         )}
 
         {serviceName === 'Data Quality' && (
           <Typography>
-            AMS from Think & Move is a modular approach focused on securing and
-            increasing business and IT value for customers. We deliver
-            customized services to optimize your applications for your specific
-            business needs. Whether it’s regular hotfixes, upgrades, quality
-            assurance, transition management, user adoption, or maintaining the
-            underlying cloud or on-premise infrastructure of your solution. Our
-            mature operational setup, good experience in focus industries,
-            service management processes and governance models tailored to your
-            business, and dedicated service desk help you keep pace with your
-            digital transformation. Get in touch with us for a FREE
-            Consultation!
+           Data Quality content
           </Typography>
         )}
 
         {serviceName === 'Embedded System Development' && (
           <Typography>
-            AMS from Think & Move is a modular approach focused on securing and
-            increasing business and IT value for customers. We deliver
-            customized services to optimize your applications for your specific
-            business needs. Whether it’s regular hotfixes, upgrades, quality
-            assurance, transition management, user adoption, or maintaining the
-            underlying cloud or on-premise infrastructure of your solution. Our
-            mature operational setup, good experience in focus industries,
-            service management processes and governance models tailored to your
-            business, and dedicated service desk help you keep pace with your
-            digital transformation. Get in touch with us for a FREE
-            Consultation!
+           Embedded System Development content
           </Typography>
         )}
 
         {serviceName === 'IOT' && (
           <Typography>
-            AMS from Think & Move is a modular approach focused on securing and
-            increasing business and IT value for customers. We deliver
-            customized services to optimize your applications for your specific
-            business needs. Whether it’s regular hotfixes, upgrades, quality
-            assurance, transition management, user adoption, or maintaining the
-            underlying cloud or on-premise infrastructure of your solution. Our
-            mature operational setup, good experience in focus industries,
-            service management processes and governance models tailored to your
-            business, and dedicated service desk help you keep pace with your
-            digital transformation. Get in touch with us for a FREE
-            Consultation!
+          IOT content
           </Typography>
         )}
 
         {serviceName === 'Machine learning' && (
           <Typography>
-            AMS from Think & Move is a modular approach focused on securing and
-            increasing business and IT value for customers. We deliver
-            customized services to optimize your applications for your specific
-            business needs. Whether it’s regular hotfixes, upgrades, quality
-            assurance, transition management, user adoption, or maintaining the
-            underlying cloud or on-premise infrastructure of your solution. Our
-            mature operational setup, good experience in focus industries,
-            service management processes and governance models tailored to your
-            business, and dedicated service desk help you keep pace with your
-            digital transformation. Get in touch with us for a FREE
-            Consultation!
+          Machine learning content
           </Typography>
         )}
 

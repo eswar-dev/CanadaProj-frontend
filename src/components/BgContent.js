@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, CardContent, Typography, Grid, Box } from '@mui/material';
-export default function BgContent() {
+export default function BgContent({children}) {
   return (
     <Grid container mb={4} maxWidth={'400px'}>
       <Grid item style={{ border: '1px solid #ccc', padding: '7px' }}>
@@ -10,8 +10,7 @@ export default function BgContent() {
             TECHNOLOGY
           </Typography>
           <Typography style={{ color: '#fff' }}>
-            Right technology adoption to design, build and run businesses for
-            long-term success
+         {children}
           </Typography>
         </Grid>
       </Grid>

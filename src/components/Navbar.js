@@ -29,6 +29,15 @@ const Navbar = () => {
     setAnchorEl(null);
     setArrowRotation('0deg');
   };
+  const scrollToPercentage = (percentage) => {
+    const scrollHeight = document.documentElement.scrollHeight;
+    const scrollTo = (scrollHeight * percentage) / 100;
+    
+    window.scrollTo({
+      top: scrollTo,
+      behavior: 'smooth'
+    });
+  };
   return (
     <AppBar
       position='static'
@@ -58,7 +67,7 @@ const Navbar = () => {
               HOME
             </Typography>
             <Typography
-              onClick={handleHome}
+onClick={() => scrollToPercentage(50)}
               style={{
                 cursor: 'pointer',
                 fontFamily: 'Denk One',
@@ -70,7 +79,7 @@ const Navbar = () => {
               ABOUT US
             </Typography>
             <Typography
-              onClick={handleHome}
+              onClick={handleClick}
               style={{
                 cursor: 'pointer',
                 fontFamily: 'Denk One',
