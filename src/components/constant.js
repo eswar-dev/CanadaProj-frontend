@@ -1,11 +1,10 @@
 export const servicedata = [
-  'Services',
   'Application Management Services',
   'Data Governance Framework',
   'Data Quality',
-  '    Embedded System Development',
+  'Embedded System Development',
   'IOT',
-  '   Machine learning',
+  'Machine learning',
 ];
 
 const convertToPath = (serviceName) => {

@@ -3,6 +3,7 @@ import { Container, TextField, Button, Grid } from '@mui/material';
 import axios from 'axios';
 import Navbar from './Navbar';
 import teamwork from '../teamwork.jpg';
+import contact from '../contact.jpg';
 
 function ContactForm() {
   const [formData, setFormData] = useState({
@@ -47,7 +48,7 @@ function ContactForm() {
       </Grid>
       <Grid item container display={'flex'} justifyContent={'center'} gap={'20px'}>
       <Grid item >
-      <img src={teamwork} style={{ height: '400px', width: '100%' }} />
+      <img src={contact} style={{ height: '400px', width: '100%' }} />
 
       </Grid>
       <Grid item >

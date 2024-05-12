@@ -4,6 +4,8 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import MiddleSection from './components/Middlesection';
 import ContactForm from './components/ContactForm';
+import ContactForm1 from './components/ContactForm1';
+import ContactForm2 from './components/ContactForm2';
 import Service from './components/services';
 import { serviceObjects } from './components/constant';
 import { createChatBotMessage } from 'react-chatbot-kit';
@@ -57,6 +59,8 @@ function App() {
         <Routes>
           <Route path='/' exact element={<MiddleSection />} />
           <Route path='/contact' element={<ContactForm />} />
+          <Route path='/contact1' element={<ContactForm1 />} />
+          <Route path='/contact2' element={<ContactForm2 />} />
           <Route path='/services' element={<Service />} />
           {serviceObjects.map((service) => (
             <Route

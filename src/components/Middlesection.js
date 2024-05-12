@@ -4,7 +4,9 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 import Mainimg from './../mainimg.png';
 import BussinessLogo from './../business.svg';
-import Content from './Content';
+import  AboutUsContent  from './AboutUsContent';
+import  OurCoursesContent  from './OurCoursesContent';
+import OurVisionContent from './OurVisionContent';
 import FooterCard from './FooterCard';
 import NumberAnimation from './NumberAnimation';
 import TypingAnimation from './TextAnimation';
@@ -12,7 +14,6 @@ import teamwork from '../teamwork.jpg';
 import courses from '../courses.jpg';
 import about from '../about.jpg';
 import mainpic from '../mainpic.jpg';
-import background from '../background.jpg';
 import SliderComponent from './SliderComponent';
 import slide1 from '../slide1.jpg';
 import slide2 from '../slide2.jpg';
@@ -54,7 +55,7 @@ const MiddleSection = () => {
   useEffect(() => {
     const intervalId = setInterval(() => {
       setServiceIndex(prevIndex => (prevIndex + 1) % services.length);
-    }, 2000); // Change service every 2 seconds
+    }, 6000); // Change service every 2 seconds
 
     return () => clearInterval(intervalId); // Cleanup on unmount
   }, []);
@@ -95,29 +96,30 @@ const MiddleSection = () => {
         alignItems={'center'}
         item
         width={'100%'}
-        mt={6}
-        pl={2}
+        mt={5}
+        pl={3}
         style={{
           // backgroundImage: 'url("../mainbg.png")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundImage: `url(${mainbg})`,
+          height: '500px'
         }}
       >
           <Grid item md={5}>
           <SliderComponent images={images} />
         </Grid>
+        
         <Grid item md={7}>
-          <Grid item display={'flex'} gap={'10px'}>
-            <BgContent children={'box1'}/>
-            <BgContent children={'box2'}/>
-          </Grid>
-          <Grid item display={'flex'} gap={'10px'}>
-            {' '}
-            <BgContent children={'box3'}/>
-            <BgContent children={'box4'}/>
-          </Grid>
-        </Grid>
+      <Grid item display={'flex'} gap={'10px'}>
+        <BgContent heading="TECHNOLOGY">Right technology adoption to design, build and run businesses for long-term success</BgContent>
+        <BgContent heading="APPLICATION">Innovation-led services to reinvent your enterprise application portfolio</BgContent>
+      </Grid>
+     <Grid item display={'flex'} gap={'10px'}>
+       <BgContent heading="STAFFING">Hire subject matter experts on ad hoc or long-term basis</BgContent>
+      <BgContent heading="TRAINING">Expert-led online and onsite learning & training programs for enterprises</BgContent>
+     </Grid>
+</Grid>
       
       </Grid>
       <Grid
@@ -133,8 +135,16 @@ const MiddleSection = () => {
         ></Box>
       <Grid item display={'flex'} justifyContent='center'>
       <Typography
-        style={{ fontSize: '24px', fontWeight: 800, color: '#01AAC1', margin: '10px' }}
-      >
+style={{
+  fontSize: '24px',
+  fontWeight: 600,
+  color: '#000',
+  margin: '10px',
+  fontFamily: 'Roboto, sans-serif', // Change font family
+  textTransform: 'uppercase',
+  letterSpacing: '1px',
+  textShadow: '2px 2px 4px rgba(0,0,0,0.2)' // Adjust the shadow properties as needed
+}}     >
         Bright Space <TypewriterText text={services[serviceIndex]} /> Services
       </Typography>
     </Grid>
@@ -151,29 +161,52 @@ const MiddleSection = () => {
       <Grid item width={'100%'} p={3} mb={5}>
         <Grid item display={'flex'} gap={'15px'} mt={2}>
           <Grid item md={6} display={'flex'} justifyContent={'center'}>
-            <img src={teamwork} style={{ height: '300px', width: '100%' }} />
+            <img src={teamwork}  style={{ 
+            height: '400px', 
+            width: '90%', 
+            borderRadius: '15px',
+            boxShadow: 'rgba(149, 157, 165, 0.2) 0px 8px 24px', 
+            transition: 'box-shadow 0.3s', 
+            ':hover': { boxShadow: 'rgba(195, 107, 117, 0.6) 0px 8px 24px' } 
+    }}  />
           </Grid>
           <Grid item md={6}>
-            <Content />
+            <OurVisionContent />
           </Grid>
         </Grid>
         <Grid item display={'flex'} gap={'15px'} mt={2}>
           <Grid item md={6}>
-            <Content />
+            <OurCoursesContent />
           </Grid>
           <Grid item md={6} display={'flex'} justifyContent={'center'}>
-            <img src={courses} style={{ height: '300px', width: '100%' }} />
+            <img src={courses}style={{ 
+            height: '400px', 
+            width: '90%', 
+            borderRadius: '15px',
+            boxShadow: 'rgba(149, 157, 165, 0.2) 0px 8px 24px', 
+            transition: 'box-shadow 0.3s', 
+            ':hover': { boxShadow: 'rgba(195, 107, 117, 0.6) 0px 8px 24px' } 
+    }} />
           </Grid>
         </Grid>
         <Grid item display={'flex'} gap={'15px'} mt={2}>
           <Grid item md={6} display={'flex'} justifyContent={'center'}>
-            <img src={about} style={{ height: '300px', width: '100%' }} />
+            <img src={about} style={{ 
+            height: '550px', 
+            width: '95%', 
+            borderRadius: '15px',
+            boxShadow: 'rgba(149, 157, 165, 0.2) 0px 8px 24px', 
+            transition: 'box-shadow 0.3s', 
+            ':hover': { boxShadow: 'rgba(195, 107, 117, 0.6) 0px 8px 24px' } 
+    }} />
           </Grid>
           <Grid item md={6}>
-            <Content />
+            <AboutUsContent />
           </Grid>
         </Grid>
       </Grid>
+      
+      
       <Grid
         item
         width={'90%'}
@@ -218,10 +251,9 @@ const MiddleSection = () => {
         style={{
           // position: 'relative',
           // bottom: 0,
-          height: '100px',
+          height: '160px',
+          width:'100%',
           color: '#fff',
-          background: 'black',
-          width: '100%',
           zIndex: 1000,
           display: 'flex',
           justifyContent: 'center',
@@ -229,6 +261,7 @@ const MiddleSection = () => {
         }}
       >
         <Footer />
+  
       </Grid>
     </Grid>
   );

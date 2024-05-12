@@ -17,6 +17,12 @@ const Navbar = () => {
   const handleClick = () => {
     navigate('/contact');
   };
+  const handleClick1 = () => {
+    navigate('/contact1');
+  };
+  const handleClick2 = () => {
+    navigate('/contact2');
+  };
   const handleHome = () => {
     navigate('/');
   };
@@ -79,7 +85,7 @@ onClick={() => scrollToPercentage(50)}
               ABOUT US
             </Typography>
             <Typography
-              onClick={handleClick}
+              onClick={handleClick1}
               style={{
                 cursor: 'pointer',
                 fontFamily: 'Denk One',
@@ -88,7 +94,19 @@ onClick={() => scrollToPercentage(50)}
                 fontSize: '20px',
               }}
             >
-              CAREER
+              PROCESS
+            </Typography>
+            <Typography
+              onClick={handleClick2}
+              style={{
+                cursor: 'pointer',
+                fontFamily: 'Denk One',
+                color: '#838383',
+                fontWeight: 700,
+                fontSize: '20px',
+              }}
+            >
+              CAREERS
             </Typography>
             <Typography
               onClick={() => navigate('/services')}
@@ -102,7 +120,7 @@ onClick={() => scrollToPercentage(50)}
                 alignItems: 'center',
               }}
             >
-              SERVICE
+              SERVICES
               <KeyboardArrowDownIcon
                 style={{
                   cursor: 'pointer',
